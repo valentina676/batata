@@ -2,13 +2,13 @@
 
 @extends('base')
 
-@section('titulo', 'Animais para adoção')
+@section('titulo', 'Animais para Adoção')
 
 @section('conteudo')
 <p>
     <a href="{{ route ('animais.cadastrar')}}">Cadastrar animal</a>
 </p>
-<p> Veja nossa lista de aniamis para adoção</p>
+<p> Veja nossa lista de clientes</p>
 
     <table border="1">
         <tr>
@@ -21,6 +21,7 @@
             <td>{{$animal['nome']}}</td>
             <td>{{$animal['idade']}}</td>
             <td><a href="{{route('animais.apagar', $animal['id'])}}">Apagar</a></td>
+            <td><a href="{{route('animais.editar', $animal['id'])}}">Editar</a></td>
         </tr>
         @endforeach
     </table>

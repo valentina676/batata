@@ -28,9 +28,31 @@ class AnimaisController extends Controller
         return redirect()->route('animais');
     }
 
-    public function apagar(Animal $animal){
+    public function apagar(Animal $animal){ //apagar vai mostrar tela a confirmação 
         return view('animais.apagar', [
             'animal'=> $animal,
         ]);
     }
+
+    public function deletar(Animal $animal)//deletar vai apagar tudo do banco 
+    {
+        $animal->delete();
+        return redirect()->route('animais');
+    }
+
+    public function editar(Animal $animal) {
+        return view('animais/editar', ['animais' => $animal]);
+       }
+       public function editarGravar(Request $form, Animal $animal)
+        {
+        $dados = $form->validate([
+        'nome' => 'required|max:255',
+        'idade' => 'required',
+        'descricao' => 'required'
+        ]);
+
+        $animal->fill($dados);
+        $animal->save();
+        return redirect()->route('animal');
+        }
 }

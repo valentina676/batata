@@ -2,7 +2,7 @@
 
 @extends('base')
 
-@section('titulo', 'Cadastrar | Animais para adoção')
+@section('titulo', 'Cadastrar | Animais par adoção')
 
 @section('conteudo')
 <p>Preencha o formulário</p>

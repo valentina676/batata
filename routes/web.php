@@ -7,27 +7,16 @@ Route::get('/', function () {
     return view('welcome');
 });
 
-Route::get('/animais',[AnimaisController::class, 'index'])->name('animais');
+Route::get('/animais', [AnimaisController::class, 'index'])->name('animais');
 
-Route::get('/animais/cadastrar',[AnimaisController::class, 'cadastrar'])->name('animais.cadastrar');
+Route::get('/animais/cadastrar', [AnimaisController::class, 'cadastrar'])->name('animais.cadastrar');
 
 Route::post('/animais/cadastrar',[AnimaisController::class, 'gravar'])->name('animais.gravar');
 
-Route::get('/animais/apagar/{animal}',
-[AnimaisController::class, 'apagar'])->name('animais.apagar');
+Route::get('/animais/apagar{animal}',[AnimaisController::class, 'apagar'])->name('animais.apagar');
 
-Route::delete('/animais/apagar/{animal}',
-[AnimaisController::class, 'apagar']);
+Route::delete('/animais/apagar{animal}',[AnimaisController::class, 'deletar']);
 
+Route::get('/animais/editar/{animal}', [AnimaisController::class, 'editar'])->name('animais.editar');
 
-
-
-
-
-/* Route::get('/hello', function() {
-    return view ('Hello');
-});
-
-Route::get('/hello/{nome}', function($nome){
-    return "ola {$nome}";
-});*/
+Route::put('/animais/editar/{animal}', [AnimaisController::class, 'editarGravar']);
