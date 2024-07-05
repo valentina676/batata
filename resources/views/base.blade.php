@@ -9,8 +9,8 @@
         <a href="{{route('index')}}">Inicial</a>
         |
         <a href="{{route('animais')}}">Animais</a>
-        <hr>
-         <a href="{{route('usuarios')}}">usuarios</a>
+        |
+         <a href="{{route('usuarios')}}">Usuarios</a>
         <hr>
         
         @yield('conteudo')
