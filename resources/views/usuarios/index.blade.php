@@ -15,7 +15,7 @@
             <th>Nome</th>
             <th>Email</th>
             <th>Username</th>
-            <th>Password</th>
+            {{-- <th>Password</th> --}}
             <th>admin</th>
         </tr>
 
@@ -24,7 +24,7 @@
             <td>{{$usuario['name']}}</td>
             <td>{{$usuario['email']}}</td>
             <td>{{$usuario['username']}}</td>
-            <td>{{$usuario['password']}}</td>
+            {{-- <td>{{$usuario['password']}}</td> --}}
             <td>{{$usuario['admin']}}</td>
             <td><a href="{{route('usuarios.apagar', $usuario['id'])}}">Apagar</a></td>
             <td><a href="{{route('usuarios.editar', $usuario['id'])}}">Editar</a></td>

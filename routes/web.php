@@ -35,3 +35,9 @@ Route::delete('/usuarios/apagar/{usuario}',[UsuariosController::class, 'deletar'
 Route::get('/usuarios/editar/{usuario}', [UsuariosController::class, 'editar'])->name('usuarios.editar');
 
 Route::put('/usuarios/editar/{usuario}', [UsuariosController::class, 'editarGravar']);
+
+Route::get('login', [UsuariosController::class, 'login'])->name('login');
+
+Route::get('login', [UsuariosController::class, 'login']);
+
+Route::get('login', [UsuariosController::class, 'logout'])->name('logout');

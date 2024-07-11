@@ -11,8 +11,10 @@
         <a href="{{route('animais')}}">Animais</a>
         |
          <a href="{{route('usuarios')}}">Usuarios</a>
+        | 
         <hr>
-        
+        <a href="{{route('login')}}">Login</a>
+       
         @yield('conteudo')
     </body>
 </html>  {{-- no blade tudo comeca com @ --}}

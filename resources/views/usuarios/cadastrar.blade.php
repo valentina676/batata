@@ -26,7 +26,11 @@
     <br>
     <input type="password" name="password" placeholder="Digite a sua senha" value="{{old('password')}}" >
      <br>
-     <input type="text" name="admin" placeholder="Admin" value="{{old('admin')}}" >
+     <label for="admin">Admin</label>
+     <select name="admin">
+     <option value="1">Sim</option>
+     <option value="0">Não</option>
+     </select>
      <br>
     <input type="submit" value="Gravar">
 </form>

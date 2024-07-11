@@ -18,5 +18,6 @@ class Usuario extends Model
         'email',
         'username',
         'password',
+        'admin',
     ];
 }

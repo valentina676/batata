@@ -10,7 +10,7 @@ class UsuariosController extends Controller
 {
 
     public function index(){
-        $dados = Usuario::all();
+        $dados = Usuario::orderBy('name', 'asc')->get();
         return view('usuarios.index',[
             'usuarios' => $dados,
         ]);
@@ -23,14 +23,16 @@ class UsuariosController extends Controller
         
         $dados = $form->validate([
             'name' => 'required|min:3',
-            'email' => 'required|min:3',
+            'email' => 'required|min:3|unique:usuarios', //unique -> faz com que não cadastre o msm email
             'username' => 'required|min:3',
             'password' => 'required|min:3',
-            'admin' => 'required|min:3',
+            'admin' => 'boolean',
         ]);
 
         $dados['password']= Hash::make($dados['password']);
 
+        // dd($dados); -> ver se esta funcionando
+        
         Usuario::create($dados);
        
         return redirect()->route('usuarios');
@@ -58,13 +60,24 @@ class UsuariosController extends Controller
         'email' => 'required|min:3',
         'username' => 'required|min:3',
         'password' => 'required|min:3',
-        'admin' => 'required|min:3',
+        'admin' => 'boolean',
         ]);
 
         $usuario->fill($dados);
         $usuario->save();
         return redirect()->route('usuario');
         }
+    public function login(Request $form){
+        if($form->isMethod('POST')){
+            
+        }
+
+        return view('usuarios.login');
+    }
+
+    public function logout(){
+
+    }
 }
 
 
