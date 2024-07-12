@@ -2,6 +2,6 @@
 
 @section('titulo', 'pagina inicial')
 
-@section( 'cooteudo')
+@section( 'conteudo')
 <p>Sejam bem-vindos à pagina inicial do inicio</p>
 @endsection

@@ -38,6 +38,6 @@ Route::put('/usuarios/editar/{usuario}', [UsuariosController::class, 'editarGrav
 
 Route::get('login', [UsuariosController::class, 'login'])->name('login');
 
-Route::get('login', [UsuariosController::class, 'login']);
+Route::post('login', [UsuariosController::class, 'login']);
 
-Route::get('login', [UsuariosController::class, 'logout'])->name('logout');
+Route::get('logout', [UsuariosController::class, 'logout'])->name('logout');

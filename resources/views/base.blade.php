@@ -11,10 +11,17 @@
         <a href="{{route('animais')}}">Animais</a>
         |
          <a href="{{route('usuarios')}}">Usuarios</a>
-        | 
-        <hr>
+        |
+
+        @if(Auth::user())
+        Olá, <strong>{{Auth::user()['name']}}</strong>
+        |
+         <a href="{{route('logout')}}">Logout</a>
+        @else
         <a href="{{route('login')}}">Login</a>
-       
+         @endif
+
+        <hr>
         @yield('conteudo')
     </body>
 </html>  {{-- no blade tudo comeca com @ --}}

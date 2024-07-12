@@ -4,11 +4,25 @@
 
 @section('conteudo')
 
-<form method="post" action="{{route('login')}}">
+@if(session('erro'))
+vcfddd    {{session('erro')}}
+    </div> 
+@endif
+
+@if($errors->any())
+<div>
+    <h4>Deu ruim</h4>
+    @foreach($errors-> all() as $erro)
+        <p>{{$erro}}</p>
+    @endforeach
+</div>
+@endif
+
+<form  action="{{route('login')}}" method="post">
 @csrf
-<input type="text" name="username" placeholder="usuarios">
+<input type="text" name="username" placeholder="login">
 <br>
-<input type="text" name="password" placeholder="senha">
+<input type="password" name="password" placeholder="senha">
 <br>
 <input type="submit" name="Entrar">
 </form>
