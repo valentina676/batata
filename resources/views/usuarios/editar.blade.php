@@ -1,6 +1,6 @@
-@extends('templates/layout')
+@extends('base')
 @section('titulo', 'Animais para adoção - Editar')
-@section('corpo')
+@section('conteudo')
 
  <h1>Produtos - Editar</h1>
  @if ($errors->any())
@@ -17,7 +17,7 @@
  @csrf
 
  @method('put')
- <p><input value="{{ old('nome', $usuario->nome ?? '') }}" type="text" name="nome" placeholder="Nome do usuario" value=""></p>
+ <p><input value="{{ old('name', $usuario->name ?? '') }}" type="text" name="name" placeholder="Nome do usuario" value=""></p>
  <p><input value="{{ old('email', $usuario->email ?? '') }}" type="text" name="email" placeholder="Digite seu email"></p>
  <p><input value="{{ old('username', $usuario->username ?? '') }}" type="text" name="username" placeholder="Digite o seu username"></p>
  <p><input value="{{ old('password', $usuario->password ?? '') }}" type="text" name="password" placeholder="Digite sua senha"></p>

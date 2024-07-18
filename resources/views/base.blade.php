@@ -4,14 +4,17 @@
         <title>@yield('titulo')</title>
     </head>
     <body>
+    {{-- {{Auth::user()['admin'] }} --}}
         <h1>@yield('titulo')</h1>
         <hr>
         <a href="{{route('index')}}">Inicial</a>
         |
         <a href="{{route('animais')}}">Animais</a>
         |
+        @if (Auth::user()&& Auth::user()['admin'])
          <a href="{{route('usuarios')}}">Usuarios</a>
         |
+        @endif
 
         @if(Auth::user())
         Olá, <strong>{{Auth::user()['name']}}</strong>
