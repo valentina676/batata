@@ -41,7 +41,7 @@ class AnimaisController extends Controller
     }
 
     public function editar(Animal $animal) {
-        return view('animais/editar', ['animais' => $animal]);
+        return view('animais/editar', ['animal' => $animal]);
        }
        public function editarGravar(Request $form, Animal $animal)
         {
