@@ -5,7 +5,8 @@
 @section('conteudo')
 
 @if(session('erro'))
-vcfddd    {{session('erro')}}
+<div style="background-color:red;color:white">
+   {{session('erro')}}
     </div> 
 @endif
 
