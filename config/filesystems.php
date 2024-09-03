@@ -28,21 +28,29 @@ return [
     |
     */
 
-    'disks' => [
+    'disks' => [ //local especifico onde fica os arquivos
 
-        'local' => [
+        'local' => [ //salva no app -> so p programadores
             'driver' => 'local',
             'root' => storage_path('app'),
             'throw' => false,
         ],
 
-        'public' => [
+        'public' => [ //app public onde todo mundo tem acesso
             'driver' => 'local',
             'root' => storage_path('app/public'),
             'url' => env('APP_URL').'/storage',
             'visibility' => 'public',
             'throw' => false,
         ],
+
+        'imagens' =>[
+            'driver'=>'local',
+            'root' => storage_path('imagens'),
+            'url' => env('APP_URL').'/img',
+            'visibility'=> 'public',
+            'throw' => false,
+         ],
 
         's3' => [
             'driver' => 's3',
@@ -71,6 +79,7 @@ return [
 
     'links' => [
         public_path('storage') => storage_path('app/public'),
+        public_path('img')=> storage_path('imagens'),
     ],
 
 ];

@@ -17,7 +17,9 @@ class AnimaisController extends Controller
     public function cadastrar(){
         return view ('animais.cadastrar');
     }
-    public function gravar(Request $form){ #vai chamar a function gravar/submeter formulário
+    public function gravar(Request $form)
+    { #vai chamar a function gravar/submeter formulário
+        dd($form);
         $dados = $form->validate([
             'nome' => 'required|min:3',
             'idade' => 'required|integer'

@@ -15,26 +15,34 @@
     @endforeach
 </div>
 @endif
-
-<form method="post" action="{{route('usuarios.gravar') }}">
+<div class="leading-loose">
+<form  class="p-10 bg-white rounded shadow-xl" method="post" action="{{route('usuarios.gravar') }}">
     @csrf
-    <input type="text" name="name" placeholder="Digite seu nome" value="{{old('name')}}">
+    <label class="block text-sm text-gray-600" for="name">Name</label>
+    <input class="w-full px-5 py-1 text-gray-700 bg-gray-200 rounded" type="text" name="name" placeholder="Digite seu nome" value="{{old('name')}}">
     <br>
-    <input type="text" name="email" placeholder="Digite seu email" value="{{old('email')}}" >
+    <label class="block text-sm text-gray-600" for="email">Email</label>
+    <input class="w-full px-5 py-1 text-gray-700 bg-gray-200 rounded" type="text" name="email" placeholder="Digite seu email" value="{{old('email')}}" >
     <br>
-    <input type="text" name="username" placeholder="Digite o seu username" value="{{old('username')}}" >
+    <label class="block text-sm text-gray-600" for="username">Username</label>
+    <input class="w-full px-5 py-1 text-gray-700 bg-gray-200 rounded" type="text" name="username" placeholder="Digite o seu username" value="{{old('username')}}" >
     <br>
-    <input type="password" name="password" placeholder="Digite a sua senha" value="{{old('password')}}" >
-     <br>
-     <label for="admin">Admin</label>
-     <select name="admin">
-     <option value="1">Sim</option>
-     <option value="0">Não</option>
-     </select>
-     <br>
-    <input type="submit" value="Gravar">
+    <label class="block text-sm text-gray-600" for="password">Senha</label>
+    <input class="w-full px-5 py-1 text-gray-700 bg-gray-200 rounded" type="password" name="password" placeholder="Digite a sua senha" value="{{old('password')}}" >
+    <main class="w-full flex-grow p-6">
+    <input class="px-4 py-1 text-white font-light tracking-wider bg-gray-900 rounded"  type="submit" value="Gravar">
+    <br>
 </form>
 @endsection
+
+     {{-- <label for="admin">Admin</label>
+     <select name="admin"> --}}
+     {{-- <option value="1">Sim</option>
+     <option value="0">Não</option>
+     </select>
+     <br> --}}
+    {{-- <input type="submit" value="Gravar"> --}}
+
 
           
 
