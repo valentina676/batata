@@ -18,12 +18,15 @@ class AnimaisController extends Controller
         return view ('animais.cadastrar');
     }
     public function gravar(Request $form)
-    { #vai chamar a function gravar/submeter formulário
-        dd($form);
+    {#vai chamar a function gravar/submeter formulário
+        $img = $form->file('imagem')->store('animais', 'imagens');
+        
         $dados = $form->validate([
             'nome' => 'required|min:3',
-            'idade' => 'required|integer'
+            'idade' => 'required|integer',
         ]);
+
+        $dados['imagem'] = $img;
 
         Animal::create($dados);
        
